@@ -17,7 +17,14 @@ async function main() {
 
   Vue.use(Auth0Plugin, {
     domain,
-    clientId
+    clientId,
+    onRedirectCallback: appState => {
+      router.push(
+        appState && appState.targetUrl
+          ? appState.targetUrl
+          : window.location.pathname
+      );
+    }
   });
   
   Vue.config.productionTip = false;
