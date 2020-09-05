@@ -1,4 +1,4 @@
-# vuestarter
+# lsr-publications
 
 ## Project setup
 ```

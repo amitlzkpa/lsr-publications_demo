@@ -24,7 +24,7 @@
 <script>
 
 export default {
-  name: 'vuestarter',
+  name: 'lsr-publications',
   data() {
     return {
       num: 0,

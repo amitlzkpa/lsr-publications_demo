@@ -8,7 +8,7 @@ const jsdocOptions = {
   swaggerDefinition: {
     openapi: "3.0.0",
     info: {
-      title: "VueStarter API Docs",
+      title: "lsr-publications API Docs",
       version: "1.0.0",
     }
   },

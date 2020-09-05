@@ -1,4 +1,4 @@
-document.title = "VueStarter API Docs";
+document.title = "lsr-publications API Docs";
 
 var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
 link.type = 'image/x-icon';
