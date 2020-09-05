@@ -1,8 +1,5 @@
 <template>
   <div>
-    <h1>Vue Starter</h1>
-    <img src="/imgs/img.png" id="img" />
-    <br />
     <button @click="onDecrLcl">Decrement Local</button>
     &nbsp;&nbsp;
     <span>{{ num }}</span>
@@ -18,10 +15,18 @@
     <button @click="onTestRoute">Test public API route</button>
     &nbsp;&nbsp;
     <button @click="onTestUserRoute">Test protected User API route</button>
+
+    <br />
+
+    <h1>LSR</h1>
+    <div id="openseadragon1" style="width: 800px; height: 600px;"></div>
+    
   </div>
 </template>
 
 <script>
+import OpenSeadragon from 'openseadragon';
+
 
 export default {
   name: 'lsr-publications',
@@ -29,6 +34,15 @@ export default {
     return {
       num: 0,
     }
+  },
+  async mounted() {
+    console.log('foo');
+    let viewer = OpenSeadragon({
+        id: "openseadragon1",
+        prefixUrl: "/openseadragon/images/",
+        tileSources: "/imgs/out/output.dzi"
+    });
+    console.log(viewer);
   },
   methods: {
     async onIncrLcl() {
