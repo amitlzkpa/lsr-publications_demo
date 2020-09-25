@@ -1,8 +1,11 @@
 import Vue from 'vue';
+import Chakra, { CThemeProvider } from '@chakra-ui/vue';
 import App from '@/App.vue';
 import router from '@/router';
 import store from '@/store';
 import axios from 'axios';
+
+Vue.use(Chakra);
 
 Vue.prototype.$api = axios.create();
 
