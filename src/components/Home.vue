@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>LSR Publications</h1>
   </div>
 </template>
 
@@ -7,7 +8,6 @@
 export default {
   data() {
     return {
-      num: 0,
     }
   },
   async mounted() {

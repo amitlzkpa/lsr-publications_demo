@@ -2,9 +2,7 @@
   <div>
     <router-link to="/">Home</router-link>
     &nbsp;|&nbsp;
-    <router-link to="/about">About</router-link>
-    &nbsp;|&nbsp;
-    <router-link v-if="$auth.isAuthenticated" to="/profile">Profile</router-link>
+    <router-link v-if="$auth.isAuthenticated" to="/viewer">Viewer</router-link>
     &nbsp;|&nbsp;
     <span v-if="!$auth.loading">
       <a v-if="!$auth.isAuthenticated" @click="login" href="#!">Log in</a>

@@ -1,8 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '@/views/Home.vue';
-import About from '@/views/About.vue';
-import Profile from '@/views/Profile.vue';
+import Home from '@/components/Home.vue';
+import SeaDragonViewer from '@/components/SeaDragonViewer.vue';
 
 import { authGuard } from "@/auth/authGuard";
 
@@ -16,23 +15,15 @@ const routes =
     name: 'home',
     component: Home,
     meta: {
-      title: route => "App: Home"
+      title: route => "LSR Publications"
     }
   },
   {
-    path: '/about',
-    name: 'about',
-    component: About,
+    path: '/viewer',
+    name: 'viewer',
+    component: SeaDragonViewer,
     meta: {
-      title: route => "App: About"
-    },
-  },
-  {
-    path: '/profile',
-    name: 'profile',
-    component: Profile,
-    meta: {
-      title: route => "App: Profile"
+      title: route => "View"
     },
     beforeEnter: authGuard
   }
