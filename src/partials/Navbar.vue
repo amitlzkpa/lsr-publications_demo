@@ -1,13 +1,23 @@
 <template>
   <div>
-    <router-link to="/">Home</router-link>
-    &nbsp;|&nbsp;
-    <router-link v-if="$auth.isAuthenticated" to="/viewer">Viewer</router-link>
-    &nbsp;|&nbsp;
-    <span v-if="!$auth.loading">
-      <a v-if="!$auth.isAuthenticated" @click="login" href="#!">Log in</a>
-      <a v-if="$auth.isAuthenticated" @click="logout" href="#!">Log out({{ $auth.user.name }})</a>
-    </span>
+
+    <div class="p-d-flex">
+
+      <div class="p-mr-2">
+        <router-link to="/">Home</router-link>
+        &nbsp;|&nbsp;
+        <router-link v-if="$auth.isAuthenticated" to="/viewer">Viewer</router-link>
+      </div>
+      
+      <div class="p-ml-auto">
+        <span v-if="!$auth.loading">
+          <a v-if="!$auth.isAuthenticated" @click="login" href="#!">Log in</a>
+          <a v-if="$auth.isAuthenticated" @click="logout" href="#!">Log out({{ $auth.user.name }})</a>
+        </span>
+      </div>
+      
+    </div>
+
   </div>
 </template>
 
