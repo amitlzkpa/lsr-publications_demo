@@ -44,7 +44,7 @@ const routes =
     meta: {
       title: route => "View"
     },
-    beforeEnter: authGuard
+    // beforeEnter: authGuard
   }
 ];
 
