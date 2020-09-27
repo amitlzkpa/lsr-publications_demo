@@ -34,7 +34,8 @@ const routes =
     component: Project,
     meta: {
       title: route => "Project"
-    }
+    },
+    beforeEnter: authGuard
   },
   {
     path: '/viewer',
