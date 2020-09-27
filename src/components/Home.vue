@@ -1,6 +1,16 @@
 <template>
   <div>
-    <h1>LSR Publications</h1>
+    <div class="p-grid">
+      <div class="p-col-fixed" style="width:100px"></div>
+      <div class="p-col">
+        <div class="p-pt-4">
+          <img src="/imgs/logo.png" style="height: 40px;" />
+          <p class="p-text-light">Publication portal for students of LS Raheja School of Architecture</p>
+          <Button v-if="$auth.isAuthenticated" href="/gallery" label="Gallery" class="p-button-secondary p-button-text" />
+        </div>
+      </div>
+      <div class="p-col-fixed" style="width:100px"></div>
+    </div>
   </div>
 </template>
 

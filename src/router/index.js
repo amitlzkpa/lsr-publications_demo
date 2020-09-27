@@ -19,6 +19,15 @@ const routes =
     }
   },
   {
+    path: '/gallery',
+    name: 'viewer',
+    component: SheetView,
+    meta: {
+      title: route => "Gallery"
+    },
+    beforeEnter: authGuard
+  },
+  {
     path: '/viewer',
     name: 'viewer',
     component: SheetView,

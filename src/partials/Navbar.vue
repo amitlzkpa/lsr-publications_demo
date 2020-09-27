@@ -1,13 +1,12 @@
 <template>
   <div>
 
-    <div class="p-d-flex">
+    <div class="p-d-flex" style="height: 40px">
 
       <div class="p-mr-2">
         <router-link to="/">
-          <img src="/imgs/logo.png" style="height: 20px; margin: 12px 12px 0px 12px;" />
+          <img src="/imgs/logo.png" style="height: 20px; margin-top: 12px;" />
         </router-link>
-        <router-link v-if="$auth.isAuthenticated" to="/viewer">Viewer</router-link>
       </div>
       
       <div class="p-ml-auto">        
