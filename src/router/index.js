@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '@/components/Home.vue';
-import SeaDragonViewer from '@/components/SeaDragonViewer.vue';
+import SheetView from '@/components/SheetView.vue';
 
 import { authGuard } from "@/auth/authGuard";
 
@@ -21,7 +21,7 @@ const routes =
   {
     path: '/viewer',
     name: 'viewer',
-    component: SeaDragonViewer,
+    component: SheetView,
     meta: {
       title: route => "View"
     },

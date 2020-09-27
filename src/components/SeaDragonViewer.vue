@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div id="openseadragon1" style="width: 800px; height: 600px;"></div>
+  <div ref="sheetContainer">
+    <div id="openseadragon" :style="'width:' + sheetWidth + 'px;' + 'height:' + sheetHeight + 'px;'"></div>
   </div>
 </template>
 
@@ -9,12 +9,25 @@ import OpenSeadragon from 'openseadragon';
 
 
 export default {
+  data() {
+    return {
+      sheetWidth: 800,
+      sheetHeight: 600
+    }
+  },
   async mounted() {
     let viewer = OpenSeadragon({
-        id: "openseadragon1",
+        id: "openseadragon",
         prefixUrl: "/openseadragon/images/",
-        tileSources: "/imgs/out/output.dzi"
+        tileSources: "/imgs/out/output.dzi",
+        showNavigator: false
     });
+    window.addEventListener('resize', (e) => {
+      this.sheetWidth = this.$refs.sheetContainer.clientWidth;
+      this.sheetHeight = this.$refs.sheetContainer.clientHeight;
+    });
+    this.sheetWidth = this.$refs.sheetContainer.clientWidth;
+    this.sheetHeight = this.$refs.sheetContainer.clientHeight;
   }
 }
 </script>

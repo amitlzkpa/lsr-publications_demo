@@ -4,7 +4,15 @@ import router from '@/router';
 import store from '@/store';
 import axios from 'axios';
 
+import 'primevue/resources/themes/bootstrap4-light-blue/theme.css';
+import 'primevue/resources/primevue.min.css';
+import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
+
+import Button from 'primevue/button';
+import Sidebar from 'primevue/sidebar';
+Vue.component('Button', Button);
+Vue.component('Sidebar', Sidebar);
 
 Vue.prototype.$api = axios.create();
 
