@@ -1,5 +1,5 @@
 <template>
-  <div ref="sheetContainer">
+  <div ref="sheetContainer" oncontextmenu="return false;">
     <div id="openseadragon" :style="'width:' + sheetWidth + 'px;' + 'height:' + sheetHeight + 'px;'"></div>
   </div>
 </template>
@@ -12,7 +12,7 @@ export default {
   data() {
     return {
       sheetWidth: 800,
-      sheetHeight: 600
+      sheetHeight: 720
     }
   },
   async mounted() {
@@ -20,7 +20,8 @@ export default {
         id: "openseadragon",
         prefixUrl: "/openseadragon/images/",
         tileSources: "/imgs/out/output.dzi",
-        showNavigator: false
+        showNavigator: false,
+        showNavigationControl: false
     });
     window.addEventListener('resize', (e) => {
       this.sheetWidth = this.$refs.sheetContainer.clientWidth;
