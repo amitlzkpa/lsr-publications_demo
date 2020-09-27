@@ -11,8 +11,8 @@ import OpenSeadragon from 'openseadragon';
 export default {
   data() {
     return {
-      sheetWidth: 800,
-      sheetHeight: 720
+      sheetWidth: 400,
+      sheetHeight: 200
     }
   },
   async mounted() {

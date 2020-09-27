@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '@/components/Home.vue';
 import Gallery from '@/components/Gallery.vue';
+import Project from '@/components/Project.vue';
 import SheetView from '@/components/SheetView.vue';
 
 import { authGuard } from "@/auth/authGuard";
@@ -25,6 +26,14 @@ const routes =
     component: Gallery,
     meta: {
       title: route => "Gallery"
+    }
+  },
+  {
+    path: '/project',
+    name: 'project',
+    component: Project,
+    meta: {
+      title: route => "Project"
     }
   },
   {

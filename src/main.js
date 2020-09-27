@@ -12,9 +12,15 @@ import 'primeflex/primeflex.css';
 import Button from 'primevue/button';
 import Card from 'primevue/card';
 import Sidebar from 'primevue/sidebar';
+import DataTable from 'primevue/datatable';
+import Column from 'primevue/column';
+import ScrollPanel from 'primevue/scrollpanel';
 Vue.component('Button', Button);
 Vue.component('Card', Card);
 Vue.component('Sidebar', Sidebar);
+Vue.component('DataTable', DataTable);
+Vue.component('Column', Column);
+Vue.component('ScrollPanel', ScrollPanel);
 
 Vue.prototype.$api = axios.create();
 
