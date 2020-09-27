@@ -10,8 +10,10 @@ import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
 
 import Button from 'primevue/button';
+import Card from 'primevue/card';
 import Sidebar from 'primevue/sidebar';
 Vue.component('Button', Button);
+Vue.component('Card', Card);
 Vue.component('Sidebar', Sidebar);
 
 Vue.prototype.$api = axios.create();

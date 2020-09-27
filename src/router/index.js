@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '@/components/Home.vue';
+import Gallery from '@/components/Gallery.vue';
 import SheetView from '@/components/SheetView.vue';
 
 import { authGuard } from "@/auth/authGuard";
@@ -20,12 +21,11 @@ const routes =
   },
   {
     path: '/gallery',
-    name: 'viewer',
-    component: SheetView,
+    name: 'gallery',
+    component: Gallery,
     meta: {
       title: route => "Gallery"
-    },
-    beforeEnter: authGuard
+    }
   },
   {
     path: '/viewer',

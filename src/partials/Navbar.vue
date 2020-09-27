@@ -9,7 +9,7 @@
         </router-link>
       </div>
       
-      <div class="p-ml-auto">        
+      <div class="p-ml-auto">
         <span v-if="!$auth.loading">
           <Button v-if="!$auth.isAuthenticated" @click="login" label="Login" class="p-button-secondary p-button-text" />
           <Button v-if="$auth.isAuthenticated" @click="logout" label="Logout" class="p-button-secondary p-button-text" />
