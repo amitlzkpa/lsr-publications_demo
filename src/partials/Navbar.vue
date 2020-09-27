@@ -4,15 +4,16 @@
     <div class="p-d-flex">
 
       <div class="p-mr-2">
-        <router-link to="/">Home</router-link>
-        &nbsp;|&nbsp;
+        <router-link to="/">
+          <img src="/imgs/logo.png" style="height: 20px; margin: 12px 12px 0px 12px;" />
+        </router-link>
         <router-link v-if="$auth.isAuthenticated" to="/viewer">Viewer</router-link>
       </div>
       
-      <div class="p-ml-auto">
+      <div class="p-ml-auto">        
         <span v-if="!$auth.loading">
-          <a v-if="!$auth.isAuthenticated" @click="login" href="#!">Log in</a>
-          <a v-if="$auth.isAuthenticated" @click="logout" href="#!">Log out({{ $auth.user.name }})</a>
+          <Button v-if="!$auth.isAuthenticated" @click="login" label="Login" class="p-button-secondary p-button-text" />
+          <Button v-if="$auth.isAuthenticated" @click="logout" label="Logout" class="p-button-secondary p-button-text" />
         </span>
       </div>
       
