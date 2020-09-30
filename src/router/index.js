@@ -4,6 +4,7 @@ import Home from '@/components/Home.vue';
 import Gallery from '@/components/Gallery.vue';
 import Project from '@/components/Project.vue';
 import SheetView from '@/components/SheetView.vue';
+import ProjectEdit from '@/components/ProjectEdit.vue';
 
 import { authGuard } from "@/auth/authGuard";
 
@@ -34,6 +35,15 @@ const routes =
     component: Project,
     meta: {
       title: route => "Project"
+    },
+    beforeEnter: authGuard
+  },
+  {
+    path: '/project/edit',
+    name: 'project-edit',
+    component: ProjectEdit,
+    meta: {
+      title: route => "ProjectEdit"
     },
     beforeEnter: authGuard
   },

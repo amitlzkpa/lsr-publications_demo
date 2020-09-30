@@ -12,7 +12,12 @@
       <div class="p-ml-auto">
         <span v-if="!$auth.loading">
           <Button v-if="!$auth.isAuthenticated" @click="login" label="Login" class="p-button-secondary p-button-text" />
-          <Button v-if="$auth.isAuthenticated" @click="logout" label="Logout" class="p-button-secondary p-button-text" />
+          <div v-if="$auth.isAuthenticated">
+            <router-link to="/project/edit">
+              <Button label="New" class="p-button-secondary p-button-text" />
+            </router-link>
+            <Button @click="logout" label="Logout" class="p-button-secondary p-button-text" />
+          </div>
         </span>
       </div>
       
