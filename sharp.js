@@ -2,7 +2,7 @@ const sharp = require('sharp');
 
 
 let inFile = './public/imgs/in.jpg';
-let outFolder = './out/output.dz';
+let outFile = './out/o.dz';
 
 
 sharp(inFile)
@@ -10,7 +10,7 @@ sharp(inFile)
   .tile({
     size: 512
   })
-  .toFile(outFolder, function(err, info) {
+  .toFile(outFile, function(err, info) {
     // output.dzi is the Deep Zoom XML definition
     // output_files contains 512x512 tiles grouped by zoom level
   });
