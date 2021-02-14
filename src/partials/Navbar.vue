@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="navbar">
 
-    <div class="p-d-flex" style="height: 40px">
+    <div class="p-d-flex">
 
       <div class="p-mr-2">
         <router-link to="/">
@@ -13,15 +13,17 @@
         <span v-if="!$auth.loading">
           <Button v-if="!$auth.isAuthenticated" @click="login" label="Login" class="p-button-secondary p-button-text" />
           <div v-if="$auth.isAuthenticated">
-            <router-link to="/project/edit">
+            <router-link to="/project/edit" style="text-decoration: none;">
               <Button label="New" class="p-button-secondary p-button-text" />
             </router-link>
             <Button @click="logout" label="Logout" class="p-button-secondary p-button-text" />
           </div>
         </span>
       </div>
-      
+
     </div>
+      
+    <hr />
 
   </div>
 </template>
@@ -43,5 +45,8 @@ export default {
 </script>
 
 <style>
+.navbar {
+  top: 0;
+}
 
 </style>

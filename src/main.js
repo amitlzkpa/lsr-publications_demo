@@ -24,14 +24,13 @@ Vue.component('ScrollPanel', ScrollPanel);
 
 Vue.prototype.$api = axios.create();
 
+
 import { Auth0Plugin } from "./auth";
 
 async function main() {
 
-  let resp = await fetch('/api/auth0-secrets');
-  let secrets = await resp.json();
-  let domain = secrets.AUTH0_DOMAIN;
-  let clientId = secrets.AUTH0_CLIENT_ID;
+  let domain = 'lsr-publications.us.auth0.com';
+  let clientId = 'TlthX6giO41oKlXqqkHyrYj5NOtckD5b';
 
   Vue.use(Auth0Plugin, {
     domain,

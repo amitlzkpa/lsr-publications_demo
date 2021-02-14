@@ -80,8 +80,8 @@ export const useAuth0 = ({
           this.$api.defaults.headers.common["Authorization"] = null;
         }
         if (this.isAuthenticated) {
-          let resp = await this.$api.post('/api/users', this.user);
-          this.dbUser = resp.data;
+          // let resp = await this.$api.post('/api/users', this.user);
+          // this.dbUser = resp.data;
         }
       },
       /** Authenticates the user using the redirect method */
