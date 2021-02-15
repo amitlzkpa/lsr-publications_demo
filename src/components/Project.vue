@@ -30,15 +30,9 @@
 
     <div class="p-grid">
       <div class="p-col-12 p-lg-8 p-md-8">
-        <SeaDragonViewer />
-        <div>
-          <p class="p-text-light">{{ project.title }}</p>
-          <div v-if="project.sheets && project.sheets.length > 0">
-            <h2>{{ project.sheets[0].title }}</h2>
-            <hr />
-            <p>{{ project.sheets[0].content }}</p>
-          </div>
-        </div>
+        <SheetView
+          :project="project"
+        />
       </div>
     </div>
 
@@ -49,14 +43,14 @@
 <script>
 import Button from 'primevue/button';
 import Sidebar from 'primevue/sidebar';
-import SeaDragonViewer from '@/components/SeaDragonViewer.vue';
+import SheetView from '@/components/SheetView.vue';
 
 
 export default {
   components: {
     Button,
     Sidebar,
-    SeaDragonViewer
+    SheetView
   },
   data() {
     return {
