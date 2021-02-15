@@ -11,7 +11,7 @@
     >
       <h3>Sheets</h3>
       <DataTable
-        :value="pages"
+        :value="project.sheets"
         :scrollable="true"
         scrollHeight="80vh"
         style="width: 92%;"
@@ -32,7 +32,7 @@
       <div class="p-col-12 p-lg-8 p-md-8">
         <SeaDragonViewer />
         <div>
-          <p class="p-text-light">Phuktal Gonpa</p>
+          <p class="p-text-light">{{ project.title }}</p>
           <h2>Site Analysis</h2>
           <hr />
           <p>
@@ -63,23 +63,15 @@ export default {
   },
   data() {
     return {
-      pagesVisible: false,
-      pages: [
-        { title: "Site Introduction"},
-        { title: "Site Evolution"},
-        { title: "Site Layout"},
-        { title: "Site Analysis"},
-        { title: "Stages of Construction"},
-        { title: "Phase 1 Evolution I"},
-        { title: "Phase 1 Evolution II"},
-        { title: "Phase 1 Tumbalukhang"},
-        { title: "Phase 1 Isometric View"},
-        { title: "Phase 2&3 Evolution"},
-        { title: "Phase 2&3 Structural Analysis"},
-        { title: "Phase 2&3 Isometric View"},
-        { title: "Phase 2&3 Structural Analysis"}
-      ]
+      pagesVisible: true,
+      project: {},
     }
+  },
+  async mounted() {
+    this.projectId = this.$route.params.projectId
+    let res = await this.$api.get(`/api/projects/id/${this.projectId}`);
+    this.project = res.data;
+    console.log(this.project);
   }
 }
 </script>

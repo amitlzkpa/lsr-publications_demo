@@ -8,7 +8,7 @@
         <div class="p-grid">
 
           <div class="p-col">
-            <router-link to="/project" style="text-decoration: none;">
+            <router-link to="/project/phuktal-gonpa" style="text-decoration: none;">
               <Card>
                 <template slot="header">
                     <img src="/imgs/phuktal-banner.jpg">
