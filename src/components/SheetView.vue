@@ -3,7 +3,6 @@
 
     <SeaDragonViewer />
     <div>
-      <p class="p-text-light">{{ project.title }}</p>
       <div v-if="project.sheets && project.sheets.length > 0">
         <h2>{{ project.sheets[0].title }}</h2>
         <hr />

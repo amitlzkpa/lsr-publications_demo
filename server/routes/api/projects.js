@@ -10,6 +10,8 @@ let allProjects = [
   {
     _id: 'phuktal-gonpa',
     title: 'Phunktal Gonpa',
+    coverContent: 'Phugtal Monastery or Phugtal Gompa (often transliterated as Phuktal) is a Buddhist monastery located in the remote Lungnak Valley in south-eastern Zanskar, in the Himalayan region of Ladakh, in Northern India. It is one of the only Buddhist monasteries in Ladakh that can still be reached only by foot. Supplies to the monastery are brought on horses, donkeys, and mules in the warmer months, and in the frozen winters, they are transported through the frozen Zanskar River. A road is expected to be built up to the monastery, however, for now, it is a day\'s walk from Village Cha or Village Khangsaar, the end of the road leading from Padum.',
+    teamCredits: '',
     sheets: [
       {
         title: 'Site Introduction',

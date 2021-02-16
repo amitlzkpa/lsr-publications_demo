@@ -1,9 +1,24 @@
 <template>
-  
+
   <div>
 
     <Sidebar
-      :visible.sync="pagesVisible"
+      :visible.sync="coverVisible"
+      :modal="false"
+      :showCloseIcon="true"
+      position="left"
+      class="p-col-11 p-lg-8 p-md-8"
+    >
+      <h2>{{ project.title }}</h2>
+      <hr />
+      <p>{{ project.coverContent }}</p>
+      <h2>Team</h2>
+      <hr />
+      <p>{{ project.teamCredits }}</p>
+    </Sidebar>
+
+    <Sidebar
+      :visible.sync="sheetsVisible"
       :modal="false"
       :showCloseIcon="false"
       position="right"
@@ -22,10 +37,17 @@
     </Sidebar>
 
     <Button
-      @click="pagesVisible = !pagesVisible"
-      :icon="pagesVisible ? 'pi pi-times' : 'pi pi-list'"
+      @click="coverVisible = !coverVisible"
+      :icon="coverVisible ? 'pi pi-times' : 'pi pi-info'"
       class="p-button-rounded p-button-secondary"
-      style="position: fixed; right: 15px; bottom: 70px; z-index: 9999;"
+      style="position: fixed; right: 90px; bottom: 70px; z-index: 9999;"
+    />
+
+    <Button
+      @click="sheetsVisible = !sheetsVisible"
+      :icon="sheetsVisible ? 'pi pi-times' : 'pi pi-list'"
+      class="p-button-rounded p-button-secondary"
+      style="position: fixed; right: 40px; bottom: 70px; z-index: 9999;"
     />
 
     <div class="p-grid">
@@ -37,7 +59,7 @@
     </div>
 
   </div>
-  
+
 </template>
 
 <script>
@@ -54,7 +76,8 @@ export default {
   },
   data() {
     return {
-      pagesVisible: true,
+      sheetsVisible: true,
+      coverVisible: false,
       project: {},
     }
   },
