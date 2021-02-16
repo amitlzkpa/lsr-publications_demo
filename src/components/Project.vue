@@ -82,6 +82,7 @@
 <script>
 import Button from 'primevue/button';
 import Sidebar from 'primevue/sidebar';
+
 import SheetView from '@/components/SheetView.vue';
 
 
@@ -95,18 +96,20 @@ export default {
     return {
       sheetsVisible: true,
       coverVisible: false,
-      selectedSheet: {},
-      project: {},
     }
+  },
+  computed: {
+    project() { return this.$store.getters.getProject },
+    selectedSheet() { return this.$store.getters.getSelectedSheet },
   },
   async mounted() {
     this.projectId = this.$route.params.projectId
     let res = await this.$api.get(`/api/projects/id/${this.projectId}`);
-    this.project = res.data;
+    this.$store.commit('setProject', res.data);
   },
   methods: {
-    async onSheetClick(sheetData) {
-      this.selectedSheet = sheetData;
+    async onSheetClick(sheet) {
+      this.$store.commit('setSelectedSheet', sheet);
     }
   }
 }

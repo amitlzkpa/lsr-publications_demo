@@ -5,15 +5,21 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
   state: {
-    count: 0
+    project: {},
+    selectedSheet: {}
   },
   mutations: {
-    increment (state) {
-      state.count++;
+    setProject(state, project) {
+      state.project = project;
+      state.selectedSheet = {};
     },
-    decrement (state) {
-      state.count--;
+    setSelectedSheet(state, sheet) {
+      state.selectedSheet = sheet;
     }
+  },
+  getters: {
+    getProject: (state) => state.project,
+    getSelectedSheet: (state) => state.selectedSheet
   }
 });
 
