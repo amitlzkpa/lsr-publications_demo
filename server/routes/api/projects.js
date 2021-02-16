@@ -41,19 +41,13 @@ let allProjects = [
 router.get('/id/:id', async (req, res) => {
   let id = req.params.id;
   let project = allProjects.find(p => p._id === id);
-  await wait(4000);
+  // await wait(4000);
   return res.json(project);
 });
 
 
 router.get('/all', async (req, res) => {
-  let projects = [
-    {
-      _id: 'phuktal-gonpa',
-      sheets: []
-    }
-  ];
-  return res.json(projects);
+  return res.json(allProjects);
 });
 
 

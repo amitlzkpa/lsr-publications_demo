@@ -17,7 +17,6 @@
 import SeaDragonViewer from '@/components/SeaDragonViewer.vue';
 
 
-
 export default {
   components: {
     SeaDragonViewer

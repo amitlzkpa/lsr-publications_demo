@@ -26,7 +26,6 @@
       position="right"
       class="p-col-11 p-lg-4 p-md-4"
     >
-      <h3>Sheets</h3>
       <DataTable
         :value="project.sheets"
         :scrollable="true"
@@ -34,7 +33,20 @@
         style="width: 92%;"
         class="p-datatable-gridlines"
       >
-        <Column field="title"></Column>
+        <Column
+          field="title"
+          header="Sheets"
+        >
+          <template #body="slotProps">
+            <div
+              @click="onSheetClick(slotProps.data)"
+              style="cursor: pointer;"
+              :class="(selectedSheet._id === slotProps.data._id) ? 'p-text-bold': ''"
+            >
+              {{ slotProps.data.title }}
+            </div>
+          </template>
+        </Column>
       </DataTable>
     </Sidebar>
 
@@ -91,12 +103,14 @@ export default {
     this.projectId = this.$route.params.projectId
     let res = await this.$api.get(`/api/projects/id/${this.projectId}`);
     this.project = res.data;
-    console.log(this.project);
-    this.selectedSheet = this.project.sheets[0] || {};
+  },
+  methods: {
+    async onSheetClick(sheetData) {
+      this.selectedSheet = sheetData;
+    }
   }
 }
 </script>
 
 <style scoped>
-
 </style>
