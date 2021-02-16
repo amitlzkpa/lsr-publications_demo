@@ -1,6 +1,10 @@
 <template>
   <div ref="sheetContainer" oncontextmenu="return false;">
-    <div id="openseadragon" :style="'width:' + sheetWidth + 'px;' + 'height:' + sheetHeight + 'px;'"></div>
+    <div
+      id="openseadragon"
+      oncontextmenu="return false;"
+      :style="'width:' + sheetWidth + 'px;' + 'height:' + sheetHeight + 'px;'"
+    ></div>
   </div>
 </template>
 
