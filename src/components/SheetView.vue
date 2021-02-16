@@ -3,10 +3,10 @@
 
     <SeaDragonViewer />
     <div>
-      <div v-if="project.sheets && project.sheets.length > 0">
-        <h2>{{ project.sheets[0].title }}</h2>
+      <div>
+        <h2>{{ sheet.title }}</h2>
         <hr />
-        <p>{{ project.sheets[0].content }}</p>
+        <p>{{ sheet.content }}</p>
       </div>
     </div>
     
@@ -22,7 +22,7 @@ export default {
   components: {
     SeaDragonViewer
   },
-  props: [ 'project' ],
+  props: [ 'sheet' ],
   data() {
     return {
     }

@@ -2,6 +2,7 @@
 
   <div>
 
+    <!-- cover -->
     <Sidebar
       :visible.sync="coverVisible"
       :modal="false"
@@ -17,6 +18,7 @@
       <p>{{ project.teamCredits }}</p>
     </Sidebar>
 
+    <!-- sheet-list -->
     <Sidebar
       :visible.sync="sheetsVisible"
       :modal="false"
@@ -36,6 +38,7 @@
       </DataTable>
     </Sidebar>
 
+    <!-- cover-button -->
     <Button
       @click="coverVisible = !coverVisible"
       :icon="coverVisible ? 'pi pi-times' : 'pi pi-info'"
@@ -43,6 +46,7 @@
       style="position: fixed; right: 90px; bottom: 70px; z-index: 9999;"
     />
 
+    <!-- sheet-list-button -->
     <Button
       @click="sheetsVisible = !sheetsVisible"
       :icon="sheetsVisible ? 'pi pi-times' : 'pi pi-list'"
@@ -53,7 +57,8 @@
     <div class="p-grid">
       <div class="p-col-12 p-lg-8 p-md-8">
         <SheetView
-          :project="project"
+          v-if="selectedSheet !== {}"
+          :sheet="selectedSheet"
         />
       </div>
     </div>
@@ -78,6 +83,7 @@ export default {
     return {
       sheetsVisible: true,
       coverVisible: false,
+      selectedSheet: {},
       project: {},
     }
   },
@@ -86,6 +92,7 @@ export default {
     let res = await this.$api.get(`/api/projects/id/${this.projectId}`);
     this.project = res.data;
     console.log(this.project);
+    this.selectedSheet = this.project.sheets[0] || {};
   }
 }
 </script>
