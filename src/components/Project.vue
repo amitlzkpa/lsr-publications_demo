@@ -8,6 +8,7 @@
       :modal="false"
       :showCloseIcon="true"
       position="left"
+      style="top: 56px; bottom: 42px; overflow-y: auto;"
       class="p-col-11 p-lg-8 p-md-8"
     >
       <h2>{{ project.title }}</h2>
