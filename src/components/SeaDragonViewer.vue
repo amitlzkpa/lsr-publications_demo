@@ -11,6 +11,7 @@
 <script>
 import OpenSeadragon from 'openseadragon';
 
+let unsubscribeStoreHook;
 
 export default {
   data() {
@@ -20,19 +21,33 @@ export default {
     }
   },
   async mounted() {
-    let viewer = OpenSeadragon({
-        id: "openseadragon",
-        prefixUrl: "/openseadragon/images/",
-        tileSources: "/imgs/phuktal-sheets/04_SITE_ANALYSIS/o.dzi",
-        showNavigator: false,
-        showNavigationControl: false
-    });
     window.addEventListener('resize', (e) => {
       this.sheetWidth = this.$refs.sheetContainer.clientWidth;
       this.sheetHeight = this.$refs.sheetContainer.clientHeight;
     });
     this.sheetWidth = this.$refs.sheetContainer.clientWidth;
     this.sheetHeight = this.$refs.sheetContainer.clientHeight;
+
+    unsubscribeStoreHook = this.$store.subscribe((mutation) => {
+      if (mutation.type !== 'setSelectedSheet') return;
+      this.updateSheetContent(mutation.payload);
+    });
+  },
+  beforeDestroy() {
+    unsubscribeStoreHook();
+  },
+  methods: {
+    updateSheetContent(sheet) {
+      let osd = document.getElementById("openseadragon");
+      osd.innerHTML = '';
+      let viewer = OpenSeadragon({
+          id: "openseadragon",
+          prefixUrl: "/openseadragon/images/",
+          tileSources: `/imgs/phuktal-sheets/${sheet._id}/sheet.dzi`,
+          showNavigator: false,
+          showNavigationControl: false
+      });
+    }
   }
 }
 </script>
