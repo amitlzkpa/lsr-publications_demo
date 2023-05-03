@@ -58,6 +58,10 @@
     },
     "rules": {}
   },
+  "engines": {
+    "node": "9",
+    "npm": "6"
+  },
   "browserslist": [
     "> 1%",
     "last 2 versions",
