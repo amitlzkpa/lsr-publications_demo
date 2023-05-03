@@ -1,4 +1,6 @@
-# lsr-publications
+# LSR Publications
+
+Online platform for students to document and showcase their work.
 
 ## Project setup
 ```

@@ -1,5 +1,7 @@
 # Project Description
 
+![Screenshot](/screenshot.png)
+
 The Raheja School of Architecture Web-Portal is an online platform that provides a centralized location for students to document and showcase their work. With authoring and editing capabilities, students have the ability to upload and manage their projects, controlling the visibility and accessibility of their work.
 
 The portal has a specialized interface that is designed to showcase the work of students in the best possible capacity. It is user-friendly, with easy-to-use tools for uploading images, videos, and text, and the ability to create and manage project portfolios.
