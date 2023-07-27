@@ -43,7 +43,7 @@ export default {
       let viewer = OpenSeadragon({
           id: "openseadragon",
           prefixUrl: "/openseadragon/images/",
-          tileSources: `/imgs/phuktal-sheets/${sheet._id}/sheet.dzi`,
+          tileSources: `/imgs/out/output.dzi`,
           showNavigator: false,
           showNavigationControl: false
       });
