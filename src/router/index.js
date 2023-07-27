@@ -25,8 +25,7 @@ const routes =
     component: Gallery,
     meta: {
       title: route => "Gallery"
-    },
-    beforeEnter: authGuard
+    }
   },
   {
     path: '/project/:projectId?',
