@@ -107,6 +107,11 @@ export default {
     this.projectId = this.$route.params.projectId
     let res = await this.$api.get(`/api/projects/id/${this.projectId}`);
     this.$store.commit('setProject', res.data);
+
+    // quick-fix: load first page by default
+    if (res.data && res.data.sheets && res.data.sheets.length > 0) {
+      this.onSheetClick(res.data.sheets[0])
+    }
   },
   methods: {
     async onSheetClick(sheet) {
